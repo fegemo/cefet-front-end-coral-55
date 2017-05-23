@@ -1,0 +1,151 @@
+/* Importa o arquivo CSS que importa a fonte Ravie */
+/* Um arquivo CSS pode importar outro usando @import */
+@import "fonts/ravie.css";
+
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* Exercício 1 */
+#recipiente {
+  width: 800px;
+  min-height: 100%;
+  margin: 0 auto;
+  background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+}
+
+
+/* Exercício 2 */
+header {
+  margin-left: 170px;
+  margin-right: 45px;
+  padding: 10px;
+}
+
+header h1 {
+  margin: 0 auto;
+  font-family: "Ravie";
+  font-size: 36px;
+  color: #e90c0c;
+  font-weight: normal;
+}
+
+header h2 {
+  font-family: "Arial", "OpenSans", sans-serif;
+  font-size: 24px;
+  color: #333;
+  font-weight: normal;
+  text-align: right;
+  margin: 0;
+}
+
+.roxo {
+  color: #d027aa;
+}
+
+
+/* Exercício 3 */
+#recipiente {
+  position: relative;
+}
+
+#lateral {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 154px;
+}
+
+#siri {
+  position: relative;
+  top: 17px;
+  left: -10px;
+}
+
+#lateral h2 {
+  font-family: "Verdana", "OpenSans", sans-serif;
+  font-size: 48px;
+  color: #333;
+  font-weight: bold;
+  position: absolute;
+  transform: rotate(-90deg);
+  left: -23px;
+  top: 233px;
+  z-index: 1;
+}
+
+#bolhas {
+  position: absolute;
+  right: 20px;
+  bottom: 125px;
+}
+
+#peixe {
+  position: absolute;
+  left: -44px;
+  bottom: 0;
+}
+
+#cardapio {
+  margin-left: 154px;
+}
+
+
+
+
+/* Exercício 4 */
+#cardapio {
+  padding: 0 20px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid #aac0ae;
+  border-bottom: 1px solid #aac0ae;
+  border-left: 1px solid #aac0ae;
+}
+
+#cardapio h3 {
+  font-family: "Verdana", "OpenSans", sans-serif;
+  font-size: 18px;
+  color: #333;
+  margin-top: 30px;
+}
+
+#cardapio article {
+  font-family: "Verdana", "OpenSans", sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 2em;
+}
+
+.preco {
+  float: right;
+}
+
+
+/* Exercício 5 */
+footer {
+  margin-left: 154px;
+  padding: 46px 15px 25px 0;
+  text-align: right;
+}
+
+
+
+/* Exercício 6 */
+#ticket {
+  position: fixed;
+  left: -89px;
+  top: 50%;
+  margin-top: -42px;
+  transition: all 100ms ease;
+}
+
+#ticket:hover {
+  left: 0;
+}
