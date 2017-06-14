@@ -6,13 +6,14 @@ Um cardápio das gostosuras marítimas servidas na Lanchonete do Coral 55.
 
 
 ### Solução passo-a-passo
-1. Estilização do recipiente geral da página (`#recipiente`) - [como ficou][passo1]. Para isso, coloque:
+#### Estilização do recipiente geral da página (`#recipiente`) - [como ficou][passo1]
+Para isso, coloque:
   - a propriedade de largura igual a `800px` (para fixá-la)
   - a mínimo de altura igual a 100% (propriedade `min-height`)
   - centralize o `#recipiente` da mesma forma que centralizaria uma imagem ([ver slides][centralizando-imgs])
   - Coloque o background-image degradê
   - Defina a borda esquerda e direita como `1px solid #d3d3d3`
-1. Estilização do cabeçalho (`header`) - [como ficou][passo2]
+#### Estilização do cabeçalho (`header`) - [como ficou][passo2]
   - Estilize o `h1` e o `h2` do `header` (ou seja, use o seletor `header h1` e `header h2`, respectivamente):  
     - Alterar a fonte (`font-family`), defina o tamanho da fonte e cor conforme especificação
     - Defina o `font-weight` para não deixar negrito
@@ -21,7 +22,7 @@ Um cardápio das gostosuras marítimas servidas na Lanchonete do Coral 55.
     -  Aumente a margem esquerda tamanho o suficiente para que a barra lateral fique a esquerda. Coloque também a margem a direita o grande o suficientesuficente para que o `h2` do `header` fique alinhado com o `h1`
     - Coloque um `padding` de 10 pixels no topo para que elimine a "linha branca" que fica acima
   - Estilize a classe `roxo` conforme especificado
-1. Estilização da seção lateral (`#lateral` e um pouco da `#cardapio`) - [como ficou][passo3]
+#### Estilização da seção lateral (`#lateral` e um pouco da `#cardapio`) - [como ficou][passo3]
    - Deixe o `#recipiente` com a propriedade `position: relative;` para que os elementos `absolute` dentro de `#recipiente` tenham sua posição alterada levando em consideração o container `#recipiente`
    - Deixe os elementos: `#lateral`, `#bolhas` e `#peixe` com a posição `absolute` e com posições conforme a especificação
    - Deixe o elemento `#siri` com a posição `relative` e posicionamento conforme a especificação
@@ -30,7 +31,7 @@ Um cardápio das gostosuras marítimas servidas na Lanchonete do Coral 55.
    como absoluta e o posicione corretamente. Coloque `z-index` para deixá-lo de forma correta
    conforme especificação.
    - Deixe o cardapio (`#cardapio`) com uma margem esquerda grande o suficiente para que não o misture com a barra lateral.
-1. Estilização do cardápio (`#cardapio`) - [como ficou][passo4]
+#### Estilização do cardápio (`#cardapio`) - [como ficou][passo4]
   - Ajuste o padding no cardápio para ficar parecido com  a especificação
   - use o `rgba` para definir branco, mas que não fique 100% opaco ([ver slide][rgba])
   - Defina a borda no topo, esquerda e abaixo como `1px solid #aac0ae`
@@ -38,12 +39,12 @@ Um cardápio das gostosuras marítimas servidas na Lanchonete do Coral 55.
   - Estilize os itens do cardápio (seletor `#cardapio article`) com fonte, tamanho e
    cor conforme especificado. Além disse altere a propriedade que ajusta o tamanho da linha (`line-height`) para, assim, aumentarmos o tamanho da linha.
   - Estilize para que o preço flutue a direita
-1. Estilização do rodapé (`footer`) - [como ficou][passo5]
+#### Estilização do rodapé (`footer`) - [como ficou][passo5]
   - Como devemos alinhar imagens a direita e elas são `inline`, alinhe-as usando `text-align`.
   - Ajuste o padding top, right, bottom e left. Você pode fazer essas três propriedades
   automaticamente com um: `padding: 46px 15px 25px 0;`
   - ajuste a margem a esquerda para `154px;`
-1. Estilização do _ticket_ (`#ticket`) - [como ficou][passo6]
+#### Estilização do _ticket_ (`#ticket`) - [como ficou][passo6]
   - No ticket (i.e. `#ticket`)
     - Deixe com a posição fixa na tela, independente do scroll (`position:fixed`)
     - Colouqe o posicionamento a esquerda o suficiente para que ele fique 50% escondido
