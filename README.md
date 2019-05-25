@@ -152,6 +152,9 @@ relativo**.
   }
   ```
 - Para incluir um _script_ na página, coloque uma _tag_ `<script src="caminho-para-arquivo.js"></script>` no final do `<body>`, logo antes do `</body>`.
+- Me esqueci das propriedades do Flexbox... onde acho? Há um excelente tutorial do site CSS Tricks: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- Me esqueci das propriedades do Grid... onde acho? Há um excelente tutorial do site CSS Tricks: https://css-tricks.com/snippets/css/complete-guide-grid/
+
 
 
 
