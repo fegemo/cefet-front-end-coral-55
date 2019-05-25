@@ -1,6 +1,7 @@
-# cefet-front-end-coral-55
+# Lanchonete do Coral 55
 
 Um cardápio das gostosuras marítimas servidas na Lanchonete do Coral 55.
+
 
 ## Atividade
 
@@ -9,43 +10,125 @@ implementar o _comprehensive layout_ criado por um _designer_ (arquivo
 `coral55-comp.png`). Você deve usar a especificação do _layout_ (arquivo
 `coral55-specs.png`).
 
+
 ### Diretrizes do Exercício
 
 Aqui estão os itens que precisam ser implementados:
 
-1. Para o título principal da página, use a fonte "Ravie", que está inclusa
-   no projeto, dentro da pasta `fonts` e já incluída pelo `estilos.css`.
+1. Use `display: grid` para o _layout_ da página. Em particular, você
+   deve usá-lo no elemento `#recipiente` para definir que a página tem
+   2 colunas e 3 linhas.
+1. Use `display: flex` para os elementos internos da página, como
+   `#cabecalho-pagina`, `#rodape-pagina`, `#lateral` e também para cada `article`
 1. Estude qual o melhor seletor CSS para cada situação.
-1. Use espaçamento (vertical) duplo (_i.e._, propriedade `line-height`) para
-   os itens do cardápio.
+1. Use espaçamento vertical duplo (_i.e._, propriedade `line-height`) para
+   os itens do cardápio (`<article></article>`).
    - Veja o [slide sobre `line-height`][line-height]
 1. Inclua o `<script></script>` `js/bubbles.js`. Veja no [FAQ](#faq).
-1. Lembre-se de como funciona o _box-model_ na hora de definir as dimensões
-   dos elementos.
-1. Lembre-se de que elementos posicionados de forma `absolute` têm seu como
-   seu sistema de coordenadas o **seu ancestral mais próximo que esteja com
-   posicionamento não-estático** (_i.e._, `position: [absolute, relative,
-   fixed]`).
-   - Tipicamente colocamos `position: relative;` no elemento pai de um elemento
-     com `position: absolute;` para servir de sistema de referência.
-1. Lembre-se também que um elemento com `position: absolute` ou
-   `position: fixed` é removido do fluxo e deixa de ocupar espaço.
-1. Algumas cores usadas possuem transparência. Veja no slide da aula dos piratas sobre [cores transparentes][cores-transparentes]
 
 
-### Roteiro
+### Exercício 1: layout da página (elemento `#recipiente`)
 
-Minha sugestão é escolher cada parte da página para estilizar. Eu fiz na
-seguinte ordem:
+Vamos usar `display: grid` para dividir a página em 2 colunas e 3 linhas,
+da seguinte forma:
 
-1. Estilização do recipiente geral da página (`#recipiente`) - [como ficou][passo1]
-1. Estilização do cabeçalho (`header`) - [como ficou][passo2]
-1. Estilização da seção lateral (`#lateral`) - [como ficou][passo3]
-   - Esta é a parte mais demorada da atividade prática
-   - Além de estilizar essa seção, também tirei `#cardapio` de baixo dela
-1. Estilização do cardápio (`#cardapio`) - [como ficou][passo4]
-1. Estilização do rodapé (`footer`) - [como ficou][passo5]
-1. Estilização do _ticket_ (`#ticket`) - [como ficou][passo6]
+![](roteiro/exercicio-1.png)
+
+...para tanto, vamos precisar de algumas propriedades CSS:
+- No `#recipiente`:
+    ```css
+    #recipiente {
+      /* ... */
+      display: grid;                        /* para usar grid */
+      grid-template-areas: "lado topo"      /* define o nome das áreas */
+                           "lado meio"
+                           "lado baixo";
+      grid-template-rows: auto 1fr auto;    /* altura das 3 linhas */
+      grid-template-columns: 154px 1fr;     /* largura das 2 colunas */
+    }
+    ```
+- Em cada filho de `#recipiente`:
+  ```css
+  #cabecalho-pagina {
+    grid-area: nome-de-uma-area-do-pai;     /* nome da área que este el. */
+                                            /* deve ocupar na grid... */
+  }                                         /* obs: não use aspas para o nome */
+  #lateral {
+    grid-area: nome-de-uma-area-do-pai;
+  }
+  #cardapio {
+    grid-area: nome-de-uma-area-do-pai;
+  }
+  #rodape-pagina {
+    grid-area: nome-de-uma-area-do-pai;
+  }
+  ```
+
+
+### Exercício 2: cabeçalho (elemento `#cabecalho-pagina`)
+
+![](roteiro/exercicio-2.png)
+
+Para estilizar o cabeçalho da página (`#cabecalho-pagina`), use Flexbox
+com a direção de **coluna** (`flex-direction: ???`).
+
+Além das propriedades colocadas no cabeçalho, em cada um dos filhos
+de `#cabecalho-pagina` (ou seja, um `h1` e um `h2`), alinhe-o de maneira
+que o `h1` fique centralizado e o `h2` fique à direita (conforme a imagem).
+Isso deve ser feito como a propriedade `align-self: ???` que deve ser
+colocada tanto no `h1` quanto no `h2`.
+
+
+### Exercício 3: o cardápio (`#cardapio`)
+
+Estilize cada item do `#cardápio` (ou seja, cada `article`) de maneira
+a deixar o nome do item à esquerda e o preço à direita - use flexbox
+no `article` para isso (não use float!!).
+
+Após ter feito isso, aumente o espaçamento vertical entre os itens do
+menu para um espaçamento duplo (veja [FAQ](#faq)) para dar um
+"arejamento" ao  texto. Deve ficar assim:
+
+![](roteiro/exercicio-3.png)
+
+
+### Exercício 4: rodapé (`#rodape-pagina`)
+
+Estilize o rodapé considerando os _specs_. Use flexbox para posicionar
+a imagem dos cartões à direita. Além disso, use propriedades como `margin`,
+`padding`, `height` etc. para definir o espaçamento como solicitado.
+
+![](roteiro/exercicio-4.png)
+
+
+### Exercício 5: seção lateral (`#lateral`)
+
+Estilize a seção lateral, que contém as imagens do siri, da bolha e do
+peixe, de maneira que o siri fique lá em cima, a bolha no meio e o peixe
+lá em baixo: use flexbox.
+
+
+
+### Desafio 1: _ticket_ (`#ticket`)
+
+Em `index.html` há um código comentado que coloca um ticket na página.
+Descomente esse código e, usando seus conhecimentos da propriedade `position`, estilize-o de maneira que mesmo se a página rolar, ele fique parado, fixado em sua posição, que é centralizada verticalmente.
+
+Faça com que ele fique escondido, deslocado `89px` à esquera e,
+quando o mouse passar sobre ele, que ele se revele (ou seja, deslocado `0`).
+
+Configure uma transição CSS para que o `#ticket` se movimente
+de maneira animada. Para isso, veja o [FAQ](#faq).
+
+
+### Desafio 2: deslocamentos das imagens
+
+Como um retoque final, desloque as imagens do `#siri` e do `#peixe`,
+conforme as specs. Esse deslocamento pode ser feito usando **posicionamento
+relativo**.
+
+![](roteiro/desafio-2.png)
+
 
 [passo1]: https://github.com/fegemo/cefet-front-end-coral-55/raw/master/roteiro/passo1.png
 [passo2]: https://github.com/fegemo/cefet-front-end-coral-55/raw/master/roteiro/passo2.png
@@ -56,16 +139,6 @@ seguinte ordem:
 
 ### <abbr title="Frequently Asked Questions">FAQ</abbr>
 
-- Para rotacionar um elemento no sentido horário:
-  ```css
-  #elemento {
-    transform: rotate(45deg); /* dado em graus, sentido horário */
-  }
-  ```
-  - Encontre qual o ângulo de rotação do título `<h2>Cardápio</h2>`
-    - Obs: é possível colocar um ângulo negativo
-  - Além de girá-lo, será necessário também posicioná-lo para que ele fique
-    próximo, mas abaixo do siri.
 - Para fazer uma **transição suave da posição** `left` de um elemento, usamos
   a propriedade `transition`:
   ```css
@@ -78,18 +151,9 @@ seguinte ordem:
     left: 0;
   }
   ```
-- Como centralizo na horizontal um elemento `block` que não está `absolute`?
-  - Veja nos [slides sobre centralização horizontal][centralizacao-horizontal]
-- Meu degradê não está funcionando... por quê?
-  - Possivelmente, você está atribuindo um `linear-gradient(...)` para a
-    propriedade `background-color`, mas um degradê é, para o CSS, um
-    `background-image`
-  - Veja no slide da aula das abelhas sobre [gradientes][gradientes]
 - Para incluir um _script_ na página, coloque uma _tag_ `<script src="caminho-para-arquivo.js"></script>` no final do `<body>`, logo antes do `</body>`.
 
 
 
-[cores-transparentes]: https://fegemo.github.io/cefet-front-end/classes/html3/#cores-transparentes
-[gradientes]: https://fegemo.github.io/cefet-front-end/classes/css1/#gradientes
 [centralizacao-horizontal]: https://fegemo.github.io/cefet-front-end/classes/css5/#centralizacao-horizontal
 [line-height]: https://fegemo.github.io/cefet-front-end/classes/css5/#line-height

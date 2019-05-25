@@ -8,99 +8,20 @@ body, html {
 
 body {
   margin: 0;
+  font-family: "Verdana", "OpenSans", sans-serif;
 }
 
-/* Exercício 1 */
+strong {
+  color: #d027aa;
+}
+
 #recipiente {
-  width: 800px;
-  min-height: 100%;
-  margin: 0 auto;
   background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
   border-left: 1px solid #d3d3d3;
   border-right: 1px solid #d3d3d3;
 }
 
 
-/* Exercício 2 */
-header {
-  margin-left: 170px;
-  margin-right: 45px;
-  padding: 10px;
-}
-
-header h1 {
-  margin: 0 auto;
-  font-family: "Ravie";
-  font-size: 36px;
-  color: #e90c0c;
-  font-weight: normal;
-}
-
-header h2 {
-  font-family: "Arial", "OpenSans", sans-serif;
-  font-size: 24px;
-  color: #333;
-  font-weight: normal;
-  text-align: right;
-  margin: 0;
-}
-
-.roxo {
-  color: #d027aa;
-}
-
-
-/* Exercício 3 */
-#recipiente {
-  position: relative;
-}
-
-#lateral {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 154px;
-}
-
-#siri {
-  position: relative;
-  top: 17px;
-  left: -10px;
-}
-
-#lateral h2 {
-  font-family: "Verdana", "OpenSans", sans-serif;
-  font-size: 48px;
-  color: #333;
-  font-weight: bold;
-  position: absolute;
-  transform: rotate(-90deg);
-  left: -23px;
-  top: 233px;
-  z-index: 1;
-}
-
-#bolhas {
-  position: absolute;
-  right: 20px;
-  bottom: 125px;
-}
-
-#peixe {
-  position: absolute;
-  left: -44px;
-  bottom: 0;
-}
-
-#cardapio {
-  margin-left: 154px;
-}
-
-
-
-
-/* Exercício 4 */
 #cardapio {
   padding: 0 20px 20px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -110,34 +31,107 @@ header h2 {
 }
 
 #cardapio h3 {
-  font-family: "Verdana", "OpenSans", sans-serif;
   font-size: 18px;
   color: #333;
   margin-top: 30px;
 }
 
 #cardapio article {
-  font-family: "Verdana", "OpenSans", sans-serif;
   font-size: 14px;
   color: #333;
-  line-height: 2em;
 }
 
-.preco {
-  float: right;
+/* Exercício 1: layout da página */
+#recipiente {
+  width: 800px;
+  min-height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: "lado topo"
+                       "lado meio"
+                       "lado baixo";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 154px 1fr;
+}
+
+#cabecalho-pagina {
+  grid-area: topo;
+}
+
+#lateral {
+  grid-area: lado;
+}
+
+#cardapio {
+  grid-area: meio;
+}
+
+#rodape-pagina {
+  grid-area: baixo;
 }
 
 
-/* Exercício 5 */
-footer {
-  margin-left: 154px;
+/* Exercício 2: cabeçalho da página */
+#cabecalho-pagina {
+  padding: 10px;
+  /*
+  display: flex;
+  flex-direction: ???;
+  */
+  display: flex;
+  flex-direction: column;
+}
+
+#cabecalho-pagina h1 {
+  margin: 0;
+  font-family: "Ravie", cursive;
+  font-size: 36px;
+  color: #e90c0c;
+  font-weight: normal;
+  /*
+  align-self: ???;
+  */
+  align-self: center;
+}
+
+#cabecalho-pagina h2 {
+  font-size: 24px;
+  color: #333;
+  font-weight: normal;
+  margin: 0;
+  /*
+  align-self: ???;
+  */
+  align-self: flex-end;
+}
+
+
+/* Exercício 3: cada item do menu */
+article {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+}
+
+
+/* Exercício 4: o rodapé */
+#rodape-pagina {
   padding: 46px 15px 25px 0;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Exercício 5: lateral */
+#lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
 
-/* Exercício 6 */
+
+/* Desafio 1: o ticket */
 #ticket {
   position: fixed;
   left: -89px;
@@ -148,4 +142,17 @@ footer {
 
 #ticket:hover {
   left: 0;
+}
+
+
+/* Desafio 2: deslocamento no siri e peixe */
+#siri {
+  position: relative;
+  top: 17px;
+  left: -10px;
+}
+
+#peixe {
+  position: relative;
+  left: -44px;
 }
