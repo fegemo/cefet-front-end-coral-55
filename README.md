@@ -1,7 +1,8 @@
 # Lanchonete do Coral 55
 
 Um cardápio das gostosuras marítimas servidas na Lanchonete do Coral 55.
-
+Se você **fizer os desafios**, **não deixe de avisar** quando entregar
+a atividade!!
 
 ## Atividade
 
@@ -15,6 +16,7 @@ implementar o _comprehensive layout_ criado por um _designer_ (arquivo
 
 Aqui estão os itens que precisam ser implementados:
 
+1. Inclua o arquivo `js/bubbles.js`. Veja no [FAQ](#faq).
 1. Use `display: grid` para o _layout_ da página. Em particular, você
    deve usá-lo no elemento `#recipiente` para definir que a página tem
    2 colunas e 3 linhas.
@@ -24,7 +26,6 @@ Aqui estão os itens que precisam ser implementados:
 1. Use espaçamento vertical duplo (_i.e._, propriedade `line-height`) para
    os itens do cardápio (`<article></article>`).
    - Veja o [slide sobre `line-height`][line-height]
-1. Inclua o `<script></script>` `js/bubbles.js`. Veja no [FAQ](#faq).
 
 
 ### Exercício 1: layout da página (elemento `#recipiente`)
@@ -40,27 +41,32 @@ da seguinte forma:
     #recipiente {
       /* ... */
       display: grid;                        /* para usar grid */
-      grid-template-areas: "lado topo"      /* define o nome das áreas */
-                           "lado meio"
-                           "lado baixo";
-      grid-template-rows: auto 1fr auto;    /* altura das 3 linhas */
-      grid-template-columns: 154px 1fr;     /* largura das 2 colunas */
+      grid-template-rows: ??? ??? ???;    /* altura das 3 linhas */
+      grid-template-columns: ??? ???;     /* largura das 2 colunas */
     }
     ```
+    - Sobre as **linhas** do grid:
+      1. A _primeira_ deve ter a altura que ela precisar (valor: `auto`)
+      1. A _segunda_ deve aproveitar todo o espaço disponível (valor: `1fr`)
+      1. A _terceira_ deve ter a altura que ela precisar, ou você pode definir uma
+         altura em pixels olhando para os _specs_ e fazendo uma continha
+    - Sobre as **colunas** do grid:
+      1. A _primeira_ deve ter exatamente `154px`
+      1. A _segunda_ deve ocupar todo o espaço restante (valor: `1fr`)
 - Em cada filho de `#recipiente`:
   ```css
   #cabecalho-pagina {
-    grid-area: nome-de-uma-area-do-pai;     /* nome da área que este el. */
-                                            /* deve ocupar na grid... */
-  }                                         /* obs: não use aspas para o nome */
+    grid-row: inicio / fim;       /* defina qual linha começa e qual termina */
+    grid-column: inicio / fim;    /* idem, mas para coluna */
+  }
   #lateral {
-    grid-area: nome-de-uma-area-do-pai;
+    /* ...defina linha e coluna */
   }
   #cardapio {
-    grid-area: nome-de-uma-area-do-pai;
+    /* ...defina linha e coluna */
   }
   #rodape-pagina {
-    grid-area: nome-de-uma-area-do-pai;
+    /* ...defina linha e coluna */
   }
   ```
 
@@ -130,12 +136,11 @@ relativo**.
 ![](roteiro/desafio-2.png)
 
 
-[passo1]: https://github.com/fegemo/cefet-front-end-coral-55/raw/master/roteiro/passo1.png
-[passo2]: https://github.com/fegemo/cefet-front-end-coral-55/raw/master/roteiro/passo2.png
-[passo3]: https://github.com/fegemo/cefet-front-end-coral-55/raw/master/roteiro/passo3.png
-[passo4]: https://github.com/fegemo/cefet-front-end-coral-55/raw/master/roteiro/passo4.png
-[passo5]: https://github.com/fegemo/cefet-front-end-coral-55/raw/master/roteiro/passo5.png
-[passo6]: https://github.com/fegemo/cefet-front-end-coral-55/raw/master/roteiro/passo6.png
+### Desafio 3: alterando as borbolhas
+
+Abra o arquivo `js/bubbles.js` e modifique o intervalo de surgimento das bolhas
+para algo bem mais rápido!
+
 
 ### <abbr title="Frequently Asked Questions">FAQ</abbr>
 
