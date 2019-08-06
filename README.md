@@ -120,7 +120,7 @@ lá em baixo: use flexbox.
 Em `index.html` há um código comentado que coloca um ticket na página.
 Descomente esse código e, usando seus conhecimentos da propriedade `position`, estilize-o de maneira que mesmo se a página rolar, ele fique parado, fixado em sua posição, que é centralizada verticalmente.
 
-Faça com que ele fique escondido, deslocado `89px` à esquera e,
+Faça com que ele fique escondido, deslocado `-89px` (à esquera) e,
 quando o mouse passar sobre ele, que ele se revele (ou seja, deslocado `0`).
 
 Configure uma transição CSS para que o `#ticket` se movimente
