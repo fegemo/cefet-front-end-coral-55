@@ -99,6 +99,9 @@ strong {
 
 /* EXERCÍCIO 3: cada item do menu */
 article {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
 }
 
 
