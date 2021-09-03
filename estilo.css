@@ -122,9 +122,14 @@ article {
 
 /* DESAFIO 1: o ticket */
 #ticket {
+  position: fixed;
+  left: -89px;
+  top: calc(50% - 42px);
+  transition: left 200ms ease;
 }
 
 #ticket:hover {
+  left: 0;
 }
 
 
