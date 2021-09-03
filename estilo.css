@@ -135,7 +135,12 @@ article {
 
 /* DESAFIO 2: deslocamento no siri e peixe */
 #siri {
+  position: relative;
+  top: 17px;
+  left: -10px;
 }
 
 #peixe {
+  position: relative;
+  left: -44px;
 }
