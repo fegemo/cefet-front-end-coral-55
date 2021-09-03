@@ -75,10 +75,8 @@ strong {
 /* EXERCÍCIO 2: cabeçalho da página */
 #cabecalho-pagina {
   padding: 10px;
-  /*
   display: flex;
-  flex-direction: ???;
-  */
+  flex-direction: column;
 }
 
 #cabecalho-pagina h1 {
@@ -87,9 +85,7 @@ strong {
   font-size: 36px;
   color: #e90c0c;
   font-weight: normal;
-  /*
-  align-self: ???;
-  */
+  align-self: center;
 }
 
 #cabecalho-pagina h2 {
@@ -97,9 +93,7 @@ strong {
   color: #333;
   font-weight: normal;
   margin: 0;
-  /*
-  align-self: ???;
-  */
+  align-self: flex-end;
 }
 
 
