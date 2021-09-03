@@ -107,6 +107,9 @@ article {
 
 /* EXERCÍCIO 4: o rodapé */
 #rodape-pagina {
+  display: flex;
+  justify-content: flex-end;
+  padding: 46px 15px 25px;
 }
 
 /* EXERCÍCIO 5: lateral */
