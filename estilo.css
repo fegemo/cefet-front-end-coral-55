@@ -46,27 +46,27 @@ strong {
   width: 800px;
   min-height: 100%;
   margin: 0 auto;
-  /* layout da página aqui */
-  /* ... */
-  /* ... */
-  /* ... */
-  /* ... */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 154px 1fr;
 }
 
 #cabecalho-pagina {
-
+  grid-column: 2 / 3;
 }
 
 #lateral {
-
+  grid-row: 1 / 4;
 }
 
 #cardapio {
-
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
 
 #rodape-pagina {
-
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
 }
 
 
