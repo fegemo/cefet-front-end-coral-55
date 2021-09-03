@@ -114,6 +114,9 @@ article {
 
 /* EXERCÍCIO 5: lateral */
 #lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
