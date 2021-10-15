@@ -1,5 +1,6 @@
 # Lanchonete do Coral 55
 
+[Baixe os arquivos aqui](https://github.com/fegemo/cefet-front-end-coral-55/archive/refs/heads/main.zip).
 Um cardápio das gostosuras marítimas servidas na Lanchonete do Coral 55.
 Se você **fizer os desafios**, **não deixe de avisar** quando entregar
 a atividade!!
